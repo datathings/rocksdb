@@ -39,7 +39,7 @@ if(POLICY CMP0042)
   cmake_policy(SET CMP0042 NEW)
 endif()
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/")
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules/")
 
 if(MSVC)
   include(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty.inc)
@@ -653,7 +653,7 @@ if(NOT WIN32 OR ROCKSDB_INSTALL_ON_WINDOWS)
   set(package_config_destination ${CMAKE_INSTALL_LIBDIR}/cmake/rocksdb)
 
   configure_package_config_file(
-    ${CMAKE_SOURCE_DIR}/cmake/RocksDBConfig.cmake.in RocksDBConfig.cmake
+    ${PROJECT_SOURCE_DIR}/cmake/RocksDBConfig.cmake.in RocksDBConfig.cmake
     INSTALL_DESTINATION ${package_config_destination}
   )
 
